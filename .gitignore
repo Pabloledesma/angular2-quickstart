@@ -29,8 +29,8 @@ node_modules
 
 .DS_Store
 
-*.css
+
 
 .vscode
 
-*.js
+app/*.js
