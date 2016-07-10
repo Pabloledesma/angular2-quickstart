@@ -11,11 +11,13 @@ import { HeroService } from './hero.service';
 
 export class HeroDetailComponent implements OnInit, OnDestroy {
 
-	hero: Hero[] = [];
+	hero: Hero;
+	sub: any;
 
 	constructor(
-	  private heroService: HeroService,
-	  private route: ActivatedRoute) {
+	  private route: ActivatedRoute,
+	  private heroService: HeroService
+	  ) {
 	}
 
 	ngOnInit() {
@@ -29,6 +31,10 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 	  this.sub.unsubscribe();
+	}
+
+	goBack() {
+	  window.history.back();
 	}
 
 }
